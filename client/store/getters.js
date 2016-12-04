@@ -1,0 +1,1 @@
+export const puzzles = state => state.puzzles;
