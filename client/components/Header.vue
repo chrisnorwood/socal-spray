@@ -1,13 +1,13 @@
 <template>
-  <v-nav nav-class="red darken-4">
-    <v-container>
-      <a href="#" class="brand-logo" slot="logo">Where's Waldo?</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down" slot="items">
+  <nav>
+    <div>
+      <a href="#" class="">Where's Waldo?</a>
+      <ul id="nav-mobile" class="">
         <li><a href="#">Find Waldo</a></li>
         <li><a href="#">High Scores</a></li>
       </ul>
-    </v-container>
-  </v-nav>
+    </div>
+  </nav>
 </template>
 
 <script>

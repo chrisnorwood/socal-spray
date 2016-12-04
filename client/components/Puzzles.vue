@@ -1,21 +1,21 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-grid s12>
+  <div>
+    <div>
+      <div>
         <h4>Available Puzzles</h4>
         <div class="flex-container">
-          <v-card v-for="puzzle in puzzles" class="puzzle col m4">
-            <div class="card-image">
+          <div v-for="puzzle in puzzles" class="puzzle">
+            <div>
               <img :src="puzzle.image_url">
             </div>
-            <div class="card-content">
-              <span class="card-title">{{ puzzle.name }}</span>
+            <div>
+              <span class="">{{ puzzle.name }}</span>
             </div>
           </v-card>
         </div>
-      </v-grid>
-    </v-row>
-  </v-container>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
