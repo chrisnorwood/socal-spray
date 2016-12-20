@@ -1,6 +1,9 @@
 var path = require('path')
 var webpack = require('webpack')
 
+var bourbon = require('node-bourbon').includePaths
+var neat = require('node-neat').includePaths
+
 module.exports = {
   entry: './client/main.js',
   output: {
@@ -29,7 +32,7 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         loaders: ["style-loader", "css-loader", "sass-loader"]
       }
     ]

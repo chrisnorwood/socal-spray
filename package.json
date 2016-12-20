@@ -6,12 +6,13 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.config.js --open --inline --hot --content-base public/",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.dev.config.js --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.pro.config.js --progress --hide-modules"
   },
   "main": "client/main.js",
   "dependencies": {
     "axios": "^0.15.3",
-    "frow": "^1.4.6",
+    "bourbon-neat": "^1.8.0",
+    "keen-ui": "git+https://github.com/LucasIcarus/Keen-UI.git#next",
     "vue": "^2.1.0",
     "vue-axios": "^1.2.2",
     "vuex": "^2.0.0"
@@ -24,6 +25,8 @@
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^1.7.2",
     "node-sass": "^3.13.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",

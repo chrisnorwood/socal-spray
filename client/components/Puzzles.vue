@@ -1,19 +1,15 @@
 <template>
   <div>
-    <div>
-      <div>
-        <h4>Available Puzzles</h4>
-        <div class="flex-container">
-          <div v-for="puzzle in puzzles" class="puzzle">
-            <div>
-              <img :src="puzzle.image_url">
-            </div>
-            <div>
-              <span class="">{{ puzzle.name }}</span>
-            </div>
-          </v-card>
+    <h4>Available Puzzles</h4>
+    <div class="flex-container">
+      <div v-for="puzzle in puzzles" class="puzzle">
+        <div>
+          <span>{{puzzle.image_url}}</span>
         </div>
-      </div>
+        <div>
+          <span class="">{{ puzzle.name }}</span>
+        </div>
+      </div>        
     </div>
   </div>
 </template>
@@ -41,7 +37,7 @@ export default {
 <style scoped>
 .flex-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
 }
 
 .puzzle {

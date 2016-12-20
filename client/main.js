@@ -2,7 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 
-import './assets/styles.scss';
+import Keen from 'keen-ui';
+Vue.use(Keen);
+
+import 'keen-ui/dist/keen-ui.css'
+import './assets/styles.scss'
 
 new Vue({
   el: '#app',

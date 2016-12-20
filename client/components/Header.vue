@@ -1,15 +1,22 @@
 <template>
-  <nav>
-    <div>
-      <a href="#" class="">Where's Waldo?</a>
-      <ul id="nav-mobile" class="">
-        <li><a href="#">Find Waldo</a></li>
-        <li><a href="#">High Scores</a></li>
-      </ul>
+  <ui-toolbar brand="SprayTown" title="Home" show-brand>
+    <div slot="actions">
+      <ui-icon-button
+        type="clear" color="black" icon="arrow_back"
+      ></ui-icon-button>
+
+      <ui-icon-button
+        type="clear" color="black" icon="star_border"
+      ></ui-icon-button>
+
+      <ui-icon-button
+        type="clear" color="black" icon="more_vert"
+        dropdown-position="bottom right"
+      ></ui-icon-button>
     </div>
-  </nav>
+  </ui-toolbar>
 </template>
 
-<script>
+<style>
 
-</script>
+</style>
