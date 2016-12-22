@@ -10,7 +10,6 @@ export default {
 
   },
   activated() {
-    console.log('dashboard activated!');
     this.$emit('selectBarItem', 'dashboard');
   },
 }
