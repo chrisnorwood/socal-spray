@@ -1,9 +1,16 @@
+@import "grid-settings";
+
 @import '~bourbon/app/assets/stylesheets/bourbon';
 @import '~bourbon-neat/app/assets/stylesheets/neat';
 
-@import "reset";
-@import "grid-settings";
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
-body {
-  
+.main-container {
+  @include outer-container;
+}
+
+.columns {    
+  @include span-columns(6);
 }

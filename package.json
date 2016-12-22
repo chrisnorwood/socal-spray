@@ -12,9 +12,10 @@
   "dependencies": {
     "axios": "^0.15.3",
     "bourbon-neat": "^1.8.0",
-    "keen-ui": "git+https://github.com/LucasIcarus/Keen-UI.git#next",
     "vue": "^2.1.0",
     "vue-axios": "^1.2.2",
+    "vue-material": "^0.5.1",
+    "vue-router": "^2.1.1",
     "vuex": "^2.0.0"
   },
   "devDependencies": {
