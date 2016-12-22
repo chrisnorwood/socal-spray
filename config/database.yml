@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: wheres-waldo_development
+  database: socal-spray_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: wheres-waldo_test
+  database: socal-spray_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: wheres-waldo_production
-  username: wheres-waldo
-  password: <%= ENV['WHERES-WALDO_DATABASE_PASSWORD'] %>
+  database: socal-spray_production
+  username: socal-spray
+  password: <%= ENV['SOCAL-SPRAY_DATABASE_PASSWORD'] %>
