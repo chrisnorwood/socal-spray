@@ -1,12 +1,11 @@
 <template>
   <div class="main-container">
     <h4>This is the login page</h4>
-    <button @click="login">This button could login</button>
   </div>
 </template>
 
 <script>
-import api from '../api';
+import api from '../../api';
 
 export default {
   data() {
