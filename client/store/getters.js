@@ -1,1 +1,1 @@
-export const puzzles = state => state.puzzles;
+export const climbs = state => state.climbs;

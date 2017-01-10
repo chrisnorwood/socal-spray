@@ -14,7 +14,7 @@ export const routes = [
   { path: '/main', component: Main, 
     children: [
       { path: '/',     name: 'dashboard', component: Dashboard },
-      { path: 'guide', name: 'guide',     component: Guide },
+      { path: '/guide', name: 'guide',     component: Guide },
     ]
   },
 ]

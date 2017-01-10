@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import api from '../../api';
+import { userAPI } from '../../services';
 
 export default {
   data() {

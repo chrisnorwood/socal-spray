@@ -1,8 +1,8 @@
-import api from '../api';
+import { climbsAPI } from '../services';
 
-export const getAllPuzzles = ({ commit }) => {
-  api.getAllPuzzles( puzzles => {
-    commit('GET_ALL_PUZZLES', puzzles);
+export const getAllClimbs = ({ commit }) => {
+  climbsAPI.getAll( response => {
+    commit('GET_ALL_CLIMBS', response);
   }, error => {
     console.log(error);
   });

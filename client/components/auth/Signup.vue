@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import api from '../../api';
+import { userAPI } from '../../services';
 
 export default {
   data() {
@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     submitForm() {
-      api.signUpUser(this.form,
+      userAPI.signUp(this.form,
         success => {
           console.log(success);
           this.$refs['successAlert'].open();

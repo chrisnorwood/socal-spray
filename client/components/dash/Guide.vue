@@ -1,12 +1,12 @@
 <template>
   <div>
     <h4>Available Climbs</h4>
-    <div v-for="puzzle in puzzles" class="columns">
+    <div v-for="climb in climbs" class="columns">
       <div>
-        <span>{{puzzle.image_url}}</span>
+        <span>{{climb.image_url}}</span>
       </div>
       <div>
-        <span class="">{{ puzzle.name }}</span>
+        <span class="">{{ climb.name }}</span>
       </div>
     </div>
   </div>
@@ -18,17 +18,17 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
   methods: {
     ...mapActions([
-      'getAllPuzzles',
+      'getAllClimbs',
     ]),
   },
   computed: {
     ...mapGetters([
-      'puzzles',
+      'climbs',
     ]),
   },
   mounted() {
     this.$emit('selectBarItem', 'guide');
-    this.getAllPuzzles();
+    this.getAllClimbs();
   },
   activated() {
     this.$emit('selectBarItem', 'guide');

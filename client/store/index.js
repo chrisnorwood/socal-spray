@@ -8,8 +8,8 @@ import mutations from './mutations';
 Vue.use(Vuex)
 
 const state = {
-  currentPuzzle: null,
-  puzzles: [],
+  currentClimb: null,
+  climbs: [],
 };
 
 export default new Vuex.Store({
