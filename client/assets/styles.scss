@@ -14,3 +14,18 @@
 .columns {    
   @include span-columns(6);
 }
+
+.page-title {
+  @include row();
+  h1 {
+    text-align: center;
+    font-size: 2.3em;
+  }
+}
+
+.signup-form {
+  @include shift(2);
+  @include span-columns(8);
+
+  text-align: center;
+}

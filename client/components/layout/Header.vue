@@ -5,7 +5,7 @@
         <router-link :to="{ name: 'home' }">SC Spray</router-link>
       </h2>
 
-      <router-link :to="{ name: 'dashboard' }">
+      <router-link :to="{ name: 'login' }">
         <md-button class="md-raised">Login</md-button>
       </router-link>
       <md-button class="md-icon-button">
