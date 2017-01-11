@@ -3,7 +3,7 @@
     <section class="page-title">
       <h1>Create new account</h1>
     </section>
-    <section class="signup-form">
+    <section class="form">
       <md-dialog-alert
         :md-title="successAlert.title"
         :md-content="successAlert.content"
@@ -55,6 +55,11 @@
         
         <md-button type="submit" class="md-raised md-primary">Sign Up</md-button>
       </form>
+
+      <span>
+        <br>
+        <router-link :to="{ name: 'login' }">(Login)</router-link>
+      </span>
     </section>
   </div>
 </template>
@@ -88,6 +93,7 @@ export default {
           console.log(success);
           this.$refs['successAlert'].open();
         }, error => {
+          console.log('an error!!!');
           this.errors = error.data.errors;
         });
     },

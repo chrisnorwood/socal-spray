@@ -8,13 +8,15 @@ import Dashboard from './components/dash/Dashboard.vue'
 import Guide from './components/dash/Guide.vue'
 
 export const routes = [
-  { path: '/home',   alias: '/', name: 'home', component: Home },
-  { path: '/login',  name: 'login', component: Login },
-  { path: '/signup', name: 'signup', component: Signup },
-  { path: '/main', component: Main, 
+  { path: '/home',   alias: '/', name: 'home', component: Home, meta: { requiresAuth: false } },
+  { path: '/login',  name: 'login', component: Login, meta: { requiresAuth: false, excludesAuth: true } },
+  { path: '/signup', name: 'signup', component: Signup, meta: { requiresAuth: false, excludesAuth: true } },
+  { path: '/main', component: Main,
     children: [
-      { path: '/',     name: 'dashboard', component: Dashboard },
-      { path: '/guide', name: 'guide',     component: Guide },
-    ]
+      { path: '',      name: 'dashboard', component: Dashboard, meta: { requiresAuth: true }, },
+      { path: 'guide', name: 'guide',     component: Guide, meta: { requiresAuth: true }, },
+    ],
+    meta: { requiresAuth: true },
   },
+  { path: '*', component: Home }
 ]

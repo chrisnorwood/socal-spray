@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, only: [:index, :show_current]
 
   def index
     @users = User.all
@@ -19,7 +20,10 @@ class UsersController < ApplicationController
   def update
   end
 
-  def show
+  def show_current
+    @user = current_user
+
+    render json: @user
   end
 
   private

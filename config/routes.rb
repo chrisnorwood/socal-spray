@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   match '*all', to: 'application#preflight', via: [:options]
   resources :puzzles, only: [:index]
 
-  resources :users, only: [:index, :create, :show]
+  resources :users, only: [:index, :create]
+  get '/current_user', to: 'users#show_current'
 end
