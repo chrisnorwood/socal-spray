@@ -11,3 +11,7 @@ export const getAllClimbs = ({ commit }) => {
 export const setUserObject = ({ commit }, userObject) => {
   commit('SET_USER_OBJECT', userObject);
 }
+
+export const clearUserObject = ({ commit }) => {
+  commit('CLEAR_USER_OBJECT');
+}

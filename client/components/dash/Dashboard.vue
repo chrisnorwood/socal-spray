@@ -9,8 +9,10 @@ export default {
   methods: {
 
   },
-  activated() {
-    this.$emit('selectBarItem', 'dashboard');
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      vm.$emit('selectBarItem', 'dashboard');
+    })
   },
 }
 </script>

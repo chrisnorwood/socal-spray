@@ -6,13 +6,15 @@
     <md-bottom-bar id="bottom" class="bottom-fixed">
       <md-bottom-bar-item 
         md-icon="dashboard"
-        :md-active="isActiveTab('dashboard')"
+        :class="{ 'md-active': isActiveTab('dashboard') }"
+        :md-active="isActiveTab('guide')"
         @click.native="navigateTo('dashboard')"
       >
         Dashboard
       </md-bottom-bar-item>
       <md-bottom-bar-item 
         md-icon="panorama"
+        :class="{ 'md-active': isActiveTab('guide') }"
         :md-active="isActiveTab('guide')"
         @click.native="navigateTo('guide')"
       >

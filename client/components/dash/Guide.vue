@@ -26,12 +26,13 @@ export default {
       'climbs',
     ]),
   },
-  mounted() {
-    this.$emit('selectBarItem', 'guide');
-    this.getAllClimbs();
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      vm.$emit('selectBarItem', 'guide');
+    })
   },
-  activated() {
-    this.$emit('selectBarItem', 'guide');
+  mounted() {
+    this.getAllClimbs();
   },
 }
 </script>

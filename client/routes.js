@@ -9,8 +9,8 @@ import Guide from './components/dash/Guide.vue'
 
 export const routes = [
   { path: '/home',   alias: '/', name: 'home', component: Home, meta: { requiresAuth: false } },
-  { path: '/login',  name: 'login', component: Login, meta: { requiresAuth: false, excludesAuth: true } },
-  { path: '/signup', name: 'signup', component: Signup, meta: { requiresAuth: false, excludesAuth: true } },
+  { path: '/signup',  name: 'signup', component: Signup, meta: { requiresAuth: false, excludesAuth: true } },
+  { path: '/login',   name: 'login',  component: Login, meta: { requiresAuth: false, excludesAuth: true } },
   { path: '/main', component: Main,
     children: [
       { path: '',      name: 'dashboard', component: Dashboard, meta: { requiresAuth: true }, },
