@@ -6,12 +6,23 @@
 </template>
 
 <script>
-import Header from './components/layout/Header.vue'
+import { mapActions } from 'vuex';
+import { auth } from './services';
+import Header from './components/layout/Header.vue';
 
 export default {
   name: 'app',
   components: {
     ssHeader: Header,
+  },
+  methods: {
+    ...mapActions([
+      'setUserObject',
+    ]),
+  },
+  created() {
+    const userObject = auth.userStorage();
+    this.setUserObject(userObject);
   },
 }
 </script>

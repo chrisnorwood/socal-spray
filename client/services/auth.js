@@ -9,7 +9,7 @@ export const auth = {
     let authUser = ls.get('authUser');
     return authUser ? authUser.accessToken : false;
   },
-  currentUser() {
-
+  userStorage() {
+    return ls.get('authUser');
   }
 }

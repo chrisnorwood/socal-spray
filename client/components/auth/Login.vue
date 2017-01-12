@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import { userAPI, ls } from '../../services';
 
 export default {
@@ -45,6 +46,9 @@ export default {
     };
   },
   methods: {
+    ...mapActions([
+      'setUserObject',
+    ]),
     submitForm() {
       const authUser = {};
 
@@ -59,6 +63,7 @@ export default {
               authUser.email = userObject.data.attributes.email;
               authUser.name  = userObject.data.attributes.name;
               ls.set('authUser', authUser);
+              this.setUserObject(authUser);
               this.$router.push({ name: 'dashboard' });
             },
             failure => {

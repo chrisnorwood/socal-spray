@@ -26,6 +26,7 @@ Vue.material.registerTheme('default', {
 Vue.use(VueRouter);
 const router = new VueRouter({routes});
 
+// Router Guard (auth)
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => {
     return record.meta.requiresAuth || false;
