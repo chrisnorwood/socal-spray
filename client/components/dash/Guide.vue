@@ -33,7 +33,6 @@ export default {
   },
   mounted() {
     this.getInitialAreas();
-    console.log(this.areas);
   },
 }
 </script>

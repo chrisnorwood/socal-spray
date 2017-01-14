@@ -2,7 +2,6 @@ import { areasAPI } from '../services';
 
 export const getInitialAreas = ({ commit }) => {
   areasAPI.getInitial( response => {
-    console.log('response.data: ');
     commit('GET_INITIAL_AREAS', response.data);
   }, error => {
     console.log(error);
