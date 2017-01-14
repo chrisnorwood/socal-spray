@@ -1,8 +1,9 @@
-import { climbsAPI } from '../services';
+import { areasAPI } from '../services';
 
-export const getAllClimbs = ({ commit }) => {
-  climbsAPI.getAll( response => {
-    commit('GET_ALL_CLIMBS', response);
+export const getInitialAreas = ({ commit }) => {
+  areasAPI.getInitial( response => {
+    console.log('response.data: ');
+    commit('GET_INITIAL_AREAS', response.data);
   }, error => {
     console.log(error);
   });

@@ -1,4 +1,4 @@
 export * from './ls'
 export * from './userAPI'
-export * from './climbsAPI'
+export * from './areasAPI'
 export * from './auth'

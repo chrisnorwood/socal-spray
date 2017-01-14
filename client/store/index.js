@@ -9,8 +9,8 @@ Vue.use(Vuex)
 
 const state = {
   userObject: null,
-  currentClimb: null,
-  climbs: [],
+  currentArea: null,
+  areas: [],
 };
 
 export default new Vuex.Store({

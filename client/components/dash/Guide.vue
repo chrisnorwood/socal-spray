@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h4>Available Climbs</h4>
-    <div v-for="climb in climbs" class="columns">
+    <h4>Available Areas</h4>
+    <div v-for="area in areas" class="columns">
       <div>
-        <span>{{climb.image_url}}</span>
+        <span>{{area.attributes.name}}</span>
       </div>
       <div>
-        <span class="">{{ climb.name }}</span>
+        <span class="">{{ area.attributes.description }}</span>
       </div>
     </div>
   </div>
@@ -18,12 +18,12 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
   methods: {
     ...mapActions([
-      'getAllClimbs',
+      'getInitialAreas',
     ]),
   },
   computed: {
     ...mapGetters([
-      'climbs',
+      'areas',
     ]),
   },
   beforeRouteEnter(to, from, next) {
@@ -32,7 +32,8 @@ export default {
     })
   },
   mounted() {
-    this.getAllClimbs();
+    this.getInitialAreas();
+    console.log(this.areas);
   },
 }
 </script>

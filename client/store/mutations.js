@@ -5,7 +5,7 @@ export default {
   CLEAR_USER_OBJECT(state) {
     state.userObject = null;
   },
-  GET_ALL_CLIMBS(state, climbs) {
-    state.climbs = climbs;
+  GET_INITIAL_AREAS(state, areas) {
+    state.areas = areas;
   },
 }

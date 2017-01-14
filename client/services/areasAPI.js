@@ -1,8 +1,8 @@
 import Vue from 'vue';
 
-export const climbsAPI = {
-  getAll (cb, ecb = null) {
-    Vue.axios.get('puzzles')
+export const areasAPI = {
+  getInitial (cb, ecb = null) {
+    Vue.axios.get('areas')
       .then(response => {
         cb(response.data);
       })
