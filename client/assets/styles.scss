@@ -1,7 +1,11 @@
+/* Dependencies */
+
 @import "grid-settings";
 
 @import '~bourbon/app/assets/stylesheets/bourbon';
 @import '~bourbon-neat/app/assets/stylesheets/neat';
+
+/* Global Styles */
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -11,6 +15,8 @@ body {
   overflow-x: hidden;
 }
 
+/* Organization/Containers */
+
 .main-container {
   @include outer-container;
 }
@@ -19,6 +25,7 @@ body {
   @include span-columns(6);
 }
 
+/* Login and Signup Pages */
 .page-title {
   @include row();
   h1 {
@@ -33,3 +40,20 @@ body {
 
   text-align: center;
 }
+
+/* Guidebook Component */
+.area-nav, .dynamic-display {
+  @include span-columns(12);
+}
+
+@media screen and (min-width: 1000px) {
+  .area-nav {
+    @include span-columns(4);
+  }
+
+  .dynamic-display {
+    @include span-columns(8);
+  }
+}
+
+

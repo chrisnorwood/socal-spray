@@ -1,13 +1,15 @@
 <template>
   <div>
-    <h4>Available Areas</h4>
-    <div v-for="area in areas" class="columns">
-      <div>
-        <span>{{area.attributes.name}}</span>
-      </div>
-      <div>
-        <span class="">{{ area.attributes.description }}</span>
-      </div>
+    <div class="area-nav">
+      <md-list v-for="area in areas">
+        <md-list-item>
+          <span>{{area.attributes.name}}</span>
+        </md-list-item>
+      </md-list>
+    </div>
+
+    <div class="dynamic-display">
+      This would be the climb display
     </div>
   </div>
 </template>
