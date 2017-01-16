@@ -5,4 +5,9 @@ class AreasController < ApplicationController
     areas = Area.first.children
     render json: areas
   end
+
+  def show
+    area = Area.find(params[:id])
+    render json: area, include: 'children'
+  end
 end

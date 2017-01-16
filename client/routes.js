@@ -13,8 +13,9 @@ export const routes = [
   { path: '/login',   name: 'login',  component: Login, meta: { requiresAuth: false, excludesAuth: true } },
   { path: '/main', component: Main,
     children: [
-      { path: '',      name: 'dashboard', component: Dashboard, meta: { requiresAuth: true }, },
-      { path: 'guide', name: 'guide',     component: Guide, meta: { requiresAuth: true }, },
+      { path: '',               name: 'dashboard', component: Dashboard, meta: { requiresAuth: true }, },
+      { path: 'guide',          name: 'guide',     component: Guide,     meta: { requiresAuth: true }, },
+      { path: 'guide/:area_id', name: 'area',      component: Guide,     meta: { requiresAuth: true }, },
     ],
     meta: { requiresAuth: true },
   },

@@ -19,10 +19,15 @@ body {
 
 .main-container {
   @include outer-container;
+  padding: 5px;
 }
 
 .columns {    
   @include span-columns(6);
+}
+
+.row {
+  @include row;
 }
 
 /* Login and Signup Pages */
@@ -46,14 +51,29 @@ body {
   @include span-columns(12);
 }
 
+.area-nav {
+  margin-top: 5px;
+}
+
+.guide-container {
+  padding: 10px;
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 1000px) {
   .area-nav {
     @include span-columns(4);
+    margin-top: 15px;
   }
 
   .dynamic-display {
     @include span-columns(8);
   }
+
+  .area-card {
+    @include span-columns(10);
+    @include shift(1);
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
-
-

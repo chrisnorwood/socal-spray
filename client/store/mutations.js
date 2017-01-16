@@ -8,4 +8,8 @@ export default {
   GET_INITIAL_AREAS(state, areas) {
     state.areas = areas;
   },
+  SELECT_AREA(state, areasResponse) {
+    state.selectedArea = areasResponse.data;
+    state.areas = areasResponse.included;
+  }
 }

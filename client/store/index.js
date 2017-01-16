@@ -9,7 +9,7 @@ Vue.use(Vuex)
 
 const state = {
   userObject: null,
-  currentArea: null,
+  selectedArea: null,
   areas: [],
 };
 

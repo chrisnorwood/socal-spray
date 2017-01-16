@@ -8,6 +8,14 @@ export const getInitialAreas = ({ commit }) => {
   });
 };
 
+export const selectArea = ({ commit }, params) => {
+  areasAPI.select(params, response => {
+    commit('SELECT_AREA', response)
+  }, error => {
+    console.log(error);
+  });
+}
+
 export const setUserObject = ({ commit }, userObject) => {
   commit('SET_USER_OBJECT', userObject);
 }
