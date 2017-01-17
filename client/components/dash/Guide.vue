@@ -2,14 +2,16 @@
   <div>
     <div class="area-nav">
       <md-whiteframe md-elevation="5">
-        <md-list>
+        <md-list class="md-dense">
+          
           <md-list-item v-if="selectedArea && areaHasParent">
             <router-link exact :to="selectedParentRoute">
               <md-icon>reply</md-icon>
               <span>Back</span>
             </router-link>
           </md-list-item>
-          <md-list-item v-if="selectedArea">
+          
+          <md-list-item v-if="areas && selectedArea">
             <md-icon>panorama</md-icon>
             <span class="underline">
               Areas in
@@ -17,12 +19,28 @@
                 {{ selectedArea.attributes.name }}:
               </span>
             </span>
+            
           </md-list-item>
-          <div v-for="area in areas">
-            <md-list-item class="md-inset">
-              <router-link :to="{ name: 'area' , params: { area_id: area.id } }">{{area.attributes.name}}</router-link>
-            </md-list-item>
-          </div>
+          
+          <md-list-item class="md-inset" v-for="area in areas">
+            <router-link :to="{ name: 'area' , params: { area_id: area.id } }">
+              {{area.attributes.name}}
+            </router-link>
+
+          </md-list-item>
+          
+
+          <md-list-item v-if="selectedArea">
+            <md-icon>panorama</md-icon>
+            <span class="underline">
+              Climbs in
+              <span class="parent-area">
+                {{ selectedArea.attributes.name }}:
+              </span>
+            </span>
+          </md-list-item>
+
+
         </md-list>
       </md-whiteframe>
     </div>
@@ -39,11 +57,11 @@
               <md-card-area>
                 <md-card-header>
                   <div class="md-title">{{ selectedArea.attributes.name }}</div>
+                  <div class="md-subheading">Rock Climbing</div>
                 </md-card-header>
 
                 <md-card-actions>
-                  <md-button>Action</md-button>
-                  <md-button>Action</md-button>
+                  <md-button>Photos</md-button>
                 </md-card-actions>
               </md-card-area>
             </md-card-media-cover>
@@ -67,6 +85,13 @@ export default {
       'getInitialAreas',
       'selectArea',
     ]),
+    selectAreaFromRoute() {
+      if (this.isAreaSelected) {
+        this.selectArea(this.$route.params);
+      } else {
+        this.selectArea({ area_id: 1 });
+      }
+    },
   },
   computed: {
     ...mapGetters([
@@ -87,16 +112,10 @@ export default {
       } else {
         return { name: 'area', params: { area_id: this.selectedArea.relationships.parent.data.id } };
       }
-
     }
   },
   mounted() {
-    console.log('made it into mounted');
-    if (this.isAreaSelected) {
-      this.selectArea(this.$route.params);
-    } else {
-      this.selectArea({ area_id: 1 });
-    }
+    this.selectAreaFromRoute();
   },
   beforeRouteEnter(to, from, next) {
     next(vm => {
@@ -105,12 +124,7 @@ export default {
   },
   watch: {
     $route () {
-      console.log('made it into route watcher');
-      if (this.isAreaSelected) {
-        this.selectArea(this.$route.params);  
-      } else {
-        this.selectArea({ area_id: 1 });
-      }
+      this.selectAreaFromRoute();
     }
   }
 }
@@ -118,8 +132,8 @@ export default {
 
 <style>
   .underline {
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-top: 1px solid #BDBDBD;
+    border-bottom: 1px solid #BDBDBD;
   }
 
   .parent-area {
