@@ -33,11 +33,22 @@ router.beforeEach((to, from, next) => {
   })) {
     // If page requires auth, redirect to login if no token
     auth.tokenExists() ? next() : next('/login');
+
+    if (auth.tokenExists()) {
+      if (auth.tokenExpired()) {
+        ls.remove('authUser');
+        next('/login');
+      } else {
+        next();
+      }
+    } else {
+      next('/login');
+    }
   } else {
     if (to.matched.some(record => {
       return record.meta.excludesAuth || false;
     })) {
-      // If age excludes authed users, redirect to dash for authed users
+      // If page excludes authed users, redirect to dash for authed users
       auth.tokenExists() ? next('/main') : next();
     } else {
       next();

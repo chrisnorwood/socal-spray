@@ -56,6 +56,11 @@ export default {
         success => {
           this.error = null;
           authUser.accessToken = success.jwt
+
+          // 24 Hours from token receipt
+          let expTime = new Date().getTime() + 86400000;
+          authUser.expTime = expTime;
+
           ls.set('authUser', authUser);
 
           userAPI.currentUser(

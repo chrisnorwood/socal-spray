@@ -11,5 +11,16 @@ export const auth = {
   },
   userStorage() {
     return ls.get('authUser');
+  },
+  tokenExpired() {
+    let authUser = ls.get('authUser');
+    
+    let expTime  = authUser.expTime;
+    let now      = new Date().getTime();
+
+    console.log('auth.tokenExpired()');
+    console.log(now - expTime);
+
+    return ((now - expTime) > 0) ? true : false;
   }
 }
