@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-container">
-      <router-view @selectBarItem="selectBarItem"></router-view>
+      <router-view @selectBarItem="selectBarItem"></router-view>  
     </div>
     <md-bottom-bar id="bottom" class="bottom-fixed">
       <md-bottom-bar-item 

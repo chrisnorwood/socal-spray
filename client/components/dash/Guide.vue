@@ -45,34 +45,39 @@
       </md-whiteframe>
     </div>
 
-    <div class="dynamic-display" v-if="selectedArea">
-      <md-whiteframe md-elevation="7" class="guide-container">
-        <div class="row">
-          <md-card class="area-card">
-            <md-card-media-cover md-solid>
-              <md-card-media md-ratio="16:9">
-                <img src="http://placeimg.com/640/480/nature">
-              </md-card-media>
+    <transition
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+      mode="out-in">
+      <div class="dynamic-display" v-if="selectedArea" :key="$route.params.area_id" id="guide-display">
+        <md-whiteframe md-elevation="7" class="guide-container">
+          <div class="row">
+            <md-card class="area-card">
+              <md-card-media-cover md-solid>
+                <md-card-media md-ratio="16:9">
+                  <img src="http://placeimg.com/640/480/nature">
+                </md-card-media>
 
-              <md-card-area>
-                <md-card-header>
-                  <div class="md-title">{{ selectedArea.attributes.name }}</div>
-                  <div class="md-subheading">Rock Climbing</div>
-                </md-card-header>
+                <md-card-area>
+                  <md-card-header>
+                    <div class="md-title">{{ selectedArea.attributes.name }}</div>
+                    <div class="md-subheading">Rock Climbing</div>
+                  </md-card-header>
 
-                <md-card-actions>
-                  <md-button>Photos</md-button>
-                </md-card-actions>
-              </md-card-area>
-            </md-card-media-cover>
-          </md-card>
-        </div>
+                  <md-card-actions>
+                    <md-button>Photos</md-button>
+                  </md-card-actions>
+                </md-card-area>
+              </md-card-media-cover>
+            </md-card>
+          </div>
 
-        <div class="row">
-          {{ selectedArea }}
-        </div>
-      </md-whiteframe>
-    </div>
+          <div class="row">
+            {{ selectedArea }}
+          </div>
+        </md-whiteframe>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -124,13 +129,14 @@ export default {
   },
   watch: {
     $route () {
+      console.log(this.$route)
       this.selectAreaFromRoute();
     }
   }
 }
 </script>
 
-<style>
+<style lang="sass">
   .underline {
     border-top: 1px solid #BDBDBD;
     border-bottom: 1px solid #BDBDBD;

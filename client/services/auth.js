@@ -17,10 +17,7 @@ export const auth = {
     
     let expTime  = authUser.expTime;
     let now      = new Date().getTime();
-
-    console.log('auth.tokenExpired()');
-    console.log(now - expTime);
-
+    
     return ((now - expTime) > 0) ? true : false;
   }
 }
