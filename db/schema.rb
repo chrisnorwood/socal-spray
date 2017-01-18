@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116162109) do
+ActiveRecord::Schema.define(version: 20170118002018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 20170116162109) do
     t.index ["user_id"], name: "index_areas_on_user_id", using: :btree
   end
 
+  create_table "climbs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "grade"
+    t.text     "fa"
+    t.text     "description"
+    t.string   "location"
+    t.integer  "user_id"
+    t.integer  "area_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["area_id"], name: "index_climbs_on_area_id", using: :btree
+    t.index ["user_id"], name: "index_climbs_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -36,4 +50,6 @@ ActiveRecord::Schema.define(version: 20170116162109) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "climbs", "areas"
+  add_foreign_key "climbs", "users"
 end
