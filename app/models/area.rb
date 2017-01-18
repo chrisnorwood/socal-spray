@@ -9,4 +9,9 @@ class Area < ApplicationRecord
   belongs_to :parent, class_name: 'Area', optional: true
   has_many :children, class_name: 'Area', foreign_key: 'parent_id'
 
+  has_many :climbs
+
+  has_many :ratings, as: :rateable
+  has_many :comments, as: :commentable
+
 end

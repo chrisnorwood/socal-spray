@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118002018) do
+ActiveRecord::Schema.define(version: 20170118023316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,28 @@ ActiveRecord::Schema.define(version: 20170118002018) do
     t.index ["user_id"], name: "index_climbs_on_user_id", using: :btree
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.string   "commentable_type"
+    t.integer  "commentable_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "stars"
+    t.string   "rateable_type"
+    t.integer  "rateable_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["rateable_type", "rateable_id"], name: "index_ratings_on_rateable_type_and_rateable_id", using: :btree
+    t.index ["user_id"], name: "index_ratings_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -52,4 +74,5 @@ ActiveRecord::Schema.define(version: 20170118002018) do
 
   add_foreign_key "climbs", "areas"
   add_foreign_key "climbs", "users"
+  add_foreign_key "ratings", "users"
 end
