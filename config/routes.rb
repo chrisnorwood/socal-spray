@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'application#preflight'
-  
+
   match '*all', to: 'application#preflight', via: [:options]
 
   post 'user_token' => 'user_token#create'
@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get '/current_user', to: 'users#show_current'
 
   resources :areas, only: [:index, :show]
+
+  resources :climbs, only: [:show]
 
 end

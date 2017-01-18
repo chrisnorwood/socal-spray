@@ -28,7 +28,6 @@
             </router-link>
 
           </md-list-item>
-          
 
           <md-list-item v-if="selectedArea">
             <md-icon>panorama</md-icon>
@@ -39,7 +38,6 @@
               </span>
             </span>
           </md-list-item>
-
 
         </md-list>
       </md-whiteframe>
