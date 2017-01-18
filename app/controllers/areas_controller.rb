@@ -7,7 +7,8 @@ class AreasController < ApplicationController
   end
 
   def show
-    area = Area.find(params[:id])
+    area = Area.friendly.find(params[:id])
     render json: area, include: 'children'
   end
+  
 end

@@ -11,7 +11,7 @@ Area.create!([
   {name: "California", description: "The best state around baby", location: "USA", parent_id: 1, user_id: 1},
   {name: "Colorado", description: "Don't mess with the south side", location: "USA", parent_id: 1, user_id: 1},
   {name: "San Diego County", description: "SD county desc", location: "San Diego, CA", parent_id: 2, user_id: 1},
-  {name: "Valley Center", description: "Classic collection", location: "Valley Center, CA", parent_id: 3, user_id: 1},
+  {name: "Valley Center", description: "Classic collection", location: "Valley Center, CA", parent_id: 4, user_id: 1},
   {name: "Idyllwild", description: "place of da rocks baby", location: "Riverside County, CA", parent_id: 2, user_id: 1}
 ])
 

@@ -1,4 +1,7 @@
 class Area < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :finders]
+
   validates :name, presence: true
   validates :description, presence: true
   validates :location, presence: true

@@ -23,7 +23,7 @@
           </md-list-item>
           
           <md-list-item class="md-inset" v-for="area in areas">
-            <router-link :to="{ name: 'area' , params: { area_id: area.id } }">
+            <router-link :to="{ name: 'area' , params: { area_id: area.attributes.slug } }">
               {{area.attributes.name}}
             </router-link>
 
@@ -92,7 +92,7 @@ export default {
       if (this.isAreaSelected) {
         this.selectArea(this.$route.params);
       } else {
-        this.selectArea({ area_id: 1 });
+        this.selectArea({ area_id: 'world' });
       }
     },
   },
@@ -113,7 +113,7 @@ export default {
       if (parentAreaID == 1) {
         return { name: 'guide' };
       } else {
-        return { name: 'area', params: { area_id: this.selectedArea.relationships.parent.data.id } };
+        return { name: 'area', params: { area_id: this.selectedArea.relationships.parent.data.slug } };
       }
     }
   },

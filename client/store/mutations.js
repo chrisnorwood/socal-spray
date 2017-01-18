@@ -9,6 +9,8 @@ export default {
     state.areas = areas;
   },
   SELECT_AREA(state, areasResponse) {
+    console.log('SELECT_AREA: ');
+    console.log(JSON.stringify(areasResponse));
     state.selectedArea = areasResponse.data;
     state.areas = areasResponse.included;
   }
