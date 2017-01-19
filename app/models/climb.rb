@@ -1,4 +1,7 @@
 class Climb < ApplicationRecord  
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :finders]
+  
   validates :name, presence: true
   validates :grade, presence: true
   validates :fa, presence: true

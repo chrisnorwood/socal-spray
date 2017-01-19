@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create]
   get '/current_user', to: 'users#show_current'
 
-  resources :areas, only: [:index, :show]
+  resources :areas, only: [:index, :show] do
+    resources :climbs, only: [:index]
+  end
 
-  resources :climbs, only: [:show]
+  
 
 end
